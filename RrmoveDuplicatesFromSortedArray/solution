@@ -1,0 +1,16 @@
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        if(nums.length ==0) return 0;
+        int o = 0;
+        for(int i = 1; i < nums.length; i++){
+            if(nums[o] != nums[i]){
+                o++;
+                nums[o] = nums[i];
+            }
+        }
+        return o + 1;
+    }
+}
+
+1. i 和 o 对比，o就是前面那个，i是后面那个
+2. 因为这是一个排列好都array，如果第一个和第二个不一样，说明后面那个大
